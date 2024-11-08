@@ -9,16 +9,11 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
-find_package(nav_msgs REQUIRED)
-find_package(sensor_msgs REQUIRED)
 find_package(gazebo_dev REQUIRED)
 find_package(gazebo_msgs REQUIRED)
 find_package(gazebo_plugins REQUIRED)
 find_package(gazebo_ros REQUIRED)
 find_package(gazebo_ros_pkgs REQUIRED)
-find_package(tf2 REQUIRED)
-find_package(tf2_geometry_msgs REQUIRED)
-find_package(tf2_ros REQUIRED)
 
 add_library(
   controller SHARED
@@ -26,17 +21,12 @@ add_library(
 )
 ament_target_dependencies(controller 
   rclcpp 
-  geometry_msgs 
-  nav_msgs 
-  sensor_msgs 
+  geometry_msgs
   gazebo_dev 
   gazebo_msgs 
   gazebo_plugins 
   gazebo_ros 
-  gazebo_ros_pkgs 
-  tf2 
-  tf2_geometry_msgs
-  tf2_ros)
+  gazebo_ros_pkgs)
 
 install(
   TARGETS controller
